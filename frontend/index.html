@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Cup Palpite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="app">
+    <!-- Tela 1: Início -->
+    <section id="screen-inicio" class="screen active">
+      <h1 class="title-large">World Cup Palpite</h1>
+      <div class="ball-container">
+        <img src="images/bola.png" alt="Bola da Copa do Mundo" class="ball-image">
+      </div>
+      <p class="subtitle">Faça seu palpite aqui</p>
+      <button type="button" class="btn btn-primary" id="btn-iniciar">Iniciar</button>
+    </section>
+
+    <!-- Tela 2: Jogos do dia -->
+    <section id="screen-jogos" class="screen">
+      <header class="jogos-header">
+        <h1 class="title-large">Jogos do dia</h1>
+        <span class="jogos-date">23/06</span>
+      </header>
+      <p class="jogos-instruction">Escolha o jogo faça o seu palpite do placar</p>
+      <div class="jogos-layout">
+        <div class="trophy-decoration" id="taca" aria-hidden="true"></div>
+        <div id="lista-partidas" class="lista-partidas"></div>
+        <div class="trophy-decoration" id="taca2" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Tela 3: Placar -->
+    <section id="screen-placar" class="screen">
+      <div class="placar-overlay">
+        <h1 class="title-large">Seu palpite</h1>
+        <p id="placar-partida-nome" class="placar-partida-nome"></p>
+        <div class="score-box">
+          <div class="score-side">
+            <button type="button" class="score-btn score-up" data-side="casa" aria-label="Aumentar gols casa">▲</button>
+            <span id="score-casa" class="score-value">00</span>
+            <button type="button" class="score-btn score-down" data-side="casa" aria-label="Diminuir gols casa">▼</button>
+          </div>
+          <div class="score-divider"></div>
+          <div class="score-side">
+            <button type="button" class="score-btn score-up" data-side="visitante" aria-label="Aumentar gols visitante">▲</button>
+            <span id="score-visitante" class="score-value">00</span>
+            <button type="button" class="score-btn score-down" data-side="visitante" aria-label="Diminuir gols visitante">▼</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-enviar" id="btn-enviar">Enviar</button>
+      </div>
+    </section>
+
+    <!-- Tela 4: Sucesso (10 segundos) -->
+    <section id="screen-sucesso" class="screen">
+      <div class="sucesso-content">
+        <h1 class="sucesso-text">Enviado com sucesso!</h1>
+        <img src="images/sucesso.png" alt="Jogadores da seleção brasileira comemorando" class="sucesso-image">
+      </div>
+      <button type="button" class="btn-skip" id="btn-avancar-sucesso" aria-label="Ir para próxima tela">
+        <span aria-hidden="true">></span>
+      </button>
+    </section>
+
+    <!-- Tela 5: Faça outro palpite -->
+    <section id="screen-final" class="screen">
+      <div class="final-content">
+        <p class="final-text">E se prepare que amanhã tem mais chuteiras rosas pra você dar seu palpite!</p>
+        <img src="images/final.png" alt="Chuteiras rosas" class="final-boots">
+        <button type="button" class="btn btn-primary btn-outro-palpite" id="btn-outro-palpite">Fazer outro palpite</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
